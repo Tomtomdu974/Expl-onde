@@ -1,19 +1,22 @@
 using UnityEngine;
-using System.Collections;
-
-
 public class SpawnGround : MonoBehaviour
 {
     [SerializeField] GameObject prefabToSpawn;
-
-    [SerializeField] int sizePrefab = 1;
+    [SerializeField] float groundLength = 1f;
+    [SerializeField] Transform targetToFollow;
+    private float nextSpawnZ = 0;
 
     private void Start()
     {
-        for (int i = 0; i < sizePrefab; i++)
-        {
-            Instantiate(prefabToSpawn, new Vector3(0, 0, i * 10), Quaternion.identity);
-        }
+        nextSpawnZ = groundLength;
     }
 
+    private void Update()
+    {
+        if (targetToFollow.position.z + groundLength > nextSpawnZ)
+        {
+            Instantiate(prefabToSpawn, new Vector3(0, 0, nextSpawnZ), Quaternion.identity);
+            nextSpawnZ += groundLength;
+        }
+    }
 }
