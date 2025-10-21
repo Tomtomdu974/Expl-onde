@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class InputHandler : MonoBehaviour
 {
-    [SerializeField] PlayerController playerController;
+    
 
     private InputAction moveAction;
     private InputAction lookAction;
@@ -20,6 +20,5 @@ public class InputHandler : MonoBehaviour
 
         Vector2 lookDirection = lookAction.ReadValue<Vector2>();
 
-        playerController.Move(moveDirection);
     }
 }
