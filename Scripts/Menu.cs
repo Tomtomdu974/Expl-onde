@@ -8,7 +8,16 @@ public class Menu : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreButtonText;
     [SerializeField] private TextMeshProUGUI controleButtonText;
     [SerializeField] private TextMeshProUGUI exitGameButtonText;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    public void newGame()
+    {
+        SceneManager.LoadScene("Game");
+    }
+    public void exitGame()
+    {
+        Application.Quit();
+    }
+    
     void Start()
     {
         newGameButtonText.text = "Nouvelle Partie";
@@ -17,13 +26,13 @@ public class Menu : MonoBehaviour
         exitGameButtonText.text = "Quitter";
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         // Update logic can be added here if needed
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
+            exitGame();
         }
     }
 }
