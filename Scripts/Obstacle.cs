@@ -3,16 +3,12 @@ using System.Collections;
 
 public class Obstacle : MonoBehaviour
 {
-    [SerializeField] private Material[] materials;
+    private GameManager gameManager;
 
-
-private void Start()
+    private void Start()
     {
-        materials = new Material[3];
-    }
-
-    public void setup(Color color)
-    {
-        //Debug.Log("Setting up obstacle color" + color);
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        int n = Random.Range(0, gameManager.materialsWave.Length);
+        GetComponent<Renderer>().material = gameManager.materialsWave[n];
     }
 }
