@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private IntEventChannelSO updateScoreChannel;
+    public Material[] materialsWave;
 
     private int score = 0;
 
