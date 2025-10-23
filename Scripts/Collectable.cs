@@ -21,10 +21,5 @@ public class Collectable : MonoBehaviour
             onCollected?.Invoke();
             Debug.Log("Collectable collected!");
         }
-        // else
-        // {
-        //     other.gameObject.SetActive(false);
-        //     Debug.Log("Pas la bonne couleure !");
-        // }
     }
 }

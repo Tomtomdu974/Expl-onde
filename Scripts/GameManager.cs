@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     public void AddScore(int score)
     {
-        this.score += score;
+        this.score += 100;
         updateScoreChannel.RaiseEvent(this.score);
     }
 }

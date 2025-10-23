@@ -9,14 +9,6 @@ public class Menu : MonoBehaviour
     [SerializeField] private TextMeshProUGUI controleButtonText;
     [SerializeField] private TextMeshProUGUI exitGameButtonText;
 
-    public void newGame()
-    {
-        SceneManager.LoadScene("Game");
-    }
-    public void exitGame()
-    {
-        Application.Quit();
-    }
     
     void Start()
     {
@@ -26,6 +18,24 @@ public class Menu : MonoBehaviour
         exitGameButtonText.text = "Quitter";
     }
 
+    public void newGame()
+    {
+        SceneManager.LoadScene("Game");
+    }
+    public void exitGame()
+    {
+        Application.Quit();
+    }
+
+    public void controleGame()
+    {
+        SceneManager.LoadScene("Controle");
+    }
+
+    public void scoreGame()
+    {
+        SceneManager.LoadScene("Scores");
+    }
     
     void Update()
     {

@@ -15,9 +15,7 @@ public class Spawner : MonoBehaviour
         float spawnInterval = Random.Range(0.5f, 4f);
         yield return new WaitForSeconds(spawnInterval);
         GameObject go = Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
-        go.GetComponent<Obstacle>().setup(Random.ColorHSV());
+        go.GetComponent<Obstacle>();
         StartCoroutine(spawnRoutine());
     }
-    
-    
 }

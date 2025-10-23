@@ -4,19 +4,19 @@ public class SpawnGround : MonoBehaviour
     [SerializeField] GameObject prefabToSpawn;
     [SerializeField] float groundLength = 1f;
     [SerializeField] Transform targetToFollow;
-    private float nextSpawnZ = 0;
+    private float spawnGrounds = 0;
 
     private void Start()
     {
-        nextSpawnZ = groundLength;
+        spawnGrounds = groundLength;
     }
 
     private void Update()
     {
-        if (targetToFollow.position.z + groundLength > nextSpawnZ)
+        if (targetToFollow.position.z + groundLength > spawnGrounds)
         {
-            Instantiate(prefabToSpawn, new Vector3(0, 0, nextSpawnZ), Quaternion.identity);
-            nextSpawnZ += groundLength;
+            Instantiate(prefabToSpawn, new Vector3(transform.position.x, 0, spawnGrounds), Quaternion.identity);
+            spawnGrounds += groundLength;
         }
     }
 }
