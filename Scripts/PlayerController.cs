@@ -63,12 +63,4 @@ public class PlayerController : MonoBehaviour
             sphere3.GetComponent<Renderer>().material = gameManager.materialsWave[actualColorIndex];
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Collectable"))
-        {
-            gameManager.AddScore(100);
-        }
-    }
 }
