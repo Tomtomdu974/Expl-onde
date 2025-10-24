@@ -2,18 +2,13 @@ using UnityEngine;
 
 public class SphereController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private GameManager gameManager;
+
+    private void Start()
     {
-        
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Collectable"))
@@ -22,7 +17,7 @@ public class SphereController : MonoBehaviour
             {
                 other.GetComponent<CollectableObstacle>().OnCollected();
                 Destroy(gameObject);
-            }    
+            }
         }
     }
 }
