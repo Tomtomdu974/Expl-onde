@@ -13,9 +13,13 @@ public class SphereController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Collectable"))
         {
-            if (other.GetComponent<Renderer>().material.color != GetComponent<Renderer>().material.color)
+            if (other.GetComponent<Renderer>().material.color == GetComponent<Renderer>().material.color)
             {
                 other.GetComponent<CollectableObstacle>().OnCollected();
+                gameManager.AddScore(1);
+            }
+            else
+            {
                 Destroy(gameObject);
             }
         }
