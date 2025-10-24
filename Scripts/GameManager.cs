@@ -1,5 +1,6 @@
 using UnityEngine;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,5 +31,10 @@ public class GameManager : MonoBehaviour
     {
         this.score += 100;
         updateScoreChannel.RaiseEvent(this.score);
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
     }
 }
