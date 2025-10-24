@@ -1,19 +1,18 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameOverMenu : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI gameOverText;
+    [SerializeField] TextMeshProUGUI gameOverButtonText;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        
+        gameOverButtonText.text = "Restart";
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RestartGame()
     {
-        
+        SceneManager.LoadScene("Game");
     }
 }
