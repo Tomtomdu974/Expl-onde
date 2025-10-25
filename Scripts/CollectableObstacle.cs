@@ -2,12 +2,18 @@ using UnityEngine;
 
 public class CollectableObstacle : MonoBehaviour
 {
-    [SerializeField] private IntEventChannelSO CollectedEvent;
-    [SerializeField] private int score = 100;
+    [SerializeField] private IntEventChannelSO collectObstacleChannel;
+    [SerializeField] private int score = 1;
 
-    public void OnCollected()
-    {
-        CollectedEvent.RaiseEvent(score);
-        Destroy(gameObject);
-    }
+    private bool isCollected = false;
+
+public void OnCollected()
+{
+    if (isCollected) return; 
+    isCollected = true;
+    
+    collectObstacleChannel.RaiseEvent(score);
+    Destroy(gameObject);
+}
+
 }

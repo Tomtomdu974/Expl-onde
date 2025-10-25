@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Keypad2))
         {
             actualColorIndex += 1;
             if (actualColorIndex >= gameManager.materialsWave.Length)
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
             sphere1.GetComponent<Renderer>().material = gameManager.materialsWave[actualColorIndex];
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E)|| Input.GetKeyDown(KeyCode.Keypad3))
         {
             actualColorIndex += 1;
             if (actualColorIndex >= gameManager.materialsWave.Length)
@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
             sphere2.GetComponent<Renderer>().material = gameManager.materialsWave[actualColorIndex];
         }
         
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q)|| Input.GetKeyDown(KeyCode.Keypad1))
         {
             actualColorIndex += 1;
             if (actualColorIndex >= gameManager.materialsWave.Length)

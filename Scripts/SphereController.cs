@@ -16,11 +16,11 @@ public class SphereController : MonoBehaviour
             if (other.GetComponent<Renderer>().material.color == GetComponent<Renderer>().material.color)
             {
                 other.GetComponent<CollectableObstacle>().OnCollected();
-                gameManager.AddScore(1);
             }
             else
             {
                 Destroy(gameObject);
+                gameManager.GameOver();
             }
         }
     }
