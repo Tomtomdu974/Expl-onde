@@ -39,7 +39,6 @@ public class Menu : MonoBehaviour
     
     void Update()
     {
-        // Update logic can be added here if needed
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             exitGame();

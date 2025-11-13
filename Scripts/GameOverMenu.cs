@@ -15,4 +15,9 @@ public class GameOverMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

@@ -4,31 +4,32 @@ public class PlayerController : MonoBehaviour
 {
     //[SerializeField] private GameObject trailWave;
     [SerializeField] private GameObject prefabToPlayer;
-    private GameManager gameManager;
     [SerializeField] private GameObject Wave1;
     [SerializeField] private GameObject Wave2;
     [SerializeField] private GameObject Wave3;
     private int actualColorIndex = 0;
-
+    private GameManager gameManager;
     private GameObject sphere1;
     private GameObject sphere2;
     private GameObject sphere3; 
 
     private void Start()
     {
-        sphere1 = Instantiate(prefabToPlayer, Wave1.transform.position, Quaternion.identity);
-        sphere2 = Instantiate(prefabToPlayer, Wave2.transform.position, Quaternion.identity);
-        sphere3 = Instantiate(prefabToPlayer, Wave3.transform.position, Quaternion.identity);
         //trailWave.SetActive(true);
-        sphere1.transform.SetParent(transform);
-        sphere2.transform.SetParent(transform);
-        sphere3.transform.SetParent(transform);
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        sphere1 = Instantiate(prefabToPlayer, Wave1.transform.position, Quaternion.identity);
+        sphere1.GetComponent<SphereController>().lane = 0;
+        sphere2 = Instantiate(prefabToPlayer, Wave2.transform.position, Quaternion.identity);
+        sphere2.GetComponent<SphereController>().lane = 1;
+        sphere3 = Instantiate(prefabToPlayer, Wave3.transform.position, Quaternion.identity);
+        sphere3.GetComponent<SphereController>().lane = 2;
+        sphere1.transform.SetParent(Wave1.transform);
+        sphere2.transform.SetParent(Wave2.transform);
+        sphere3.transform.SetParent(Wave3.transform);
         sphere1.GetComponent<Renderer>().material = gameManager.materialsWave[0];
         sphere2.GetComponent<Renderer>().material = gameManager.materialsWave[0];
         sphere3.GetComponent<Renderer>().material = gameManager.materialsWave[0];
     }
-
 
     private void Update()
     {

@@ -7,16 +7,10 @@ public class SpawnGround : MonoBehaviour
     [SerializeField] Transform targetToFollow;
     private float spawnGrounds = 0;
 
-    private void Start()
-    {
-        spawnGrounds = groundLength;
-        
-        for (int i = 0; i < 10; i++)
-        {
-            Instantiate(prefabToSpawn, new Vector3(transform.position.x, 0, spawnGrounds), Quaternion.identity);
-            spawnGrounds += groundLength;
-        }
-    }
+    // private void Start()
+    // {
+    //     spawnGrounds = groundLength;
+    // }
 
     private void Update()
     {

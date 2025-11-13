@@ -19,7 +19,6 @@ public class Collectable : MonoBehaviour
         if (other.CompareTag(collectableTag) && obstacleColor == other.GetComponent<Renderer>().material.color)
         {
             onCollected?.Invoke();
-            Debug.Log("Collectable collected!");
         }
     }
 }

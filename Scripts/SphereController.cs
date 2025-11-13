@@ -3,10 +3,13 @@ using UnityEngine;
 public class SphereController : MonoBehaviour
 {
     private GameManager gameManager;
+    private ActiveGround activeGround;
+    public int lane;
 
     private void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        activeGround = GameObject.Find("ActiveGrounds").GetComponent<ActiveGround>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -20,7 +23,7 @@ public class SphereController : MonoBehaviour
             else
             {
                 Destroy(gameObject);
-                gameManager.GameOver();
+                activeGround.DesactiveGrounds(lane);
             }
         }
     }

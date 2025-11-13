@@ -33,8 +33,9 @@ public class GameManager : MonoBehaviour
         updateScoreChannel.RaiseEvent(this.score);
     }
 
-    public void GameOver()
-    {
-        SceneManager.LoadScene("GameOver");
-    }
+
+    // public void GameOver()
+    // {
+    //     SceneManager.LoadScene("GameOver");
+    // }
 }
