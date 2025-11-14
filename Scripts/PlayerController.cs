@@ -41,7 +41,11 @@ public class PlayerController : MonoBehaviour
 
                 actualColorIndex = 0;
             }
-            sphere1.GetComponent<Renderer>().material = gameManager.materialsWave[actualColorIndex];
+
+            if(sphere1 != null)
+            {
+                sphere1.GetComponent<Renderer>().material = gameManager.materialsWave[actualColorIndex];
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.E)|| Input.GetKeyDown(KeyCode.Keypad3))
@@ -51,7 +55,11 @@ public class PlayerController : MonoBehaviour
             {
                 actualColorIndex = 0;
             }
-            sphere2.GetComponent<Renderer>().material = gameManager.materialsWave[actualColorIndex];
+
+            if(sphere2 != null)
+            {
+                sphere2.GetComponent<Renderer>().material = gameManager.materialsWave[actualColorIndex];
+            }
         }
         
         if (Input.GetKeyDown(KeyCode.Q)|| Input.GetKeyDown(KeyCode.Keypad1))
@@ -61,7 +69,11 @@ public class PlayerController : MonoBehaviour
             {
                 actualColorIndex = 0;
             }
-            sphere3.GetComponent<Renderer>().material = gameManager.materialsWave[actualColorIndex];
+
+            if(sphere3 != null)
+            {
+                sphere3.GetComponent<Renderer>().material = gameManager.materialsWave[actualColorIndex];
+            }
         }
     }
 }

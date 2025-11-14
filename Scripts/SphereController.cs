@@ -22,7 +22,6 @@ public class SphereController : MonoBehaviour
             }
             else
             {
-                Destroy(gameObject);
                 activeGround.DesactiveGrounds(lane);
             }
         }

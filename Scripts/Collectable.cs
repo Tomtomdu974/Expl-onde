@@ -7,6 +7,8 @@ public class Collectable : MonoBehaviour
     [SerializeField] private UnityEvent onCollected;
     [SerializeField] private string collectableTag = "Collectable";
     private Color obstacleColor;
+    private ActiveGround activeGround;
+    public int lane;
 
     void Start()
     {
@@ -19,6 +21,10 @@ public class Collectable : MonoBehaviour
         if (other.CompareTag(collectableTag) && obstacleColor == other.GetComponent<Renderer>().material.color)
         {
             onCollected?.Invoke();
+        }
+        else
+        {
+            activeGround.DesactiveGrounds(lane);
         }
     }
 }

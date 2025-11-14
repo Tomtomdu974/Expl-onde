@@ -3,14 +3,9 @@ public class SpawnGround : MonoBehaviour
 {
     [SerializeField] GameObject prefabToSpawn;
     [SerializeField] float groundLength = 1f;
-    [SerializeField] float spawnGroundDistance = 10f;
+    [SerializeField] float spawnGroundDistance = 20f;
     [SerializeField] Transform targetToFollow;
     private float spawnGrounds = 0;
-
-    // private void Start()
-    // {
-    //     spawnGrounds = groundLength;
-    // }
 
     private void Update()
     {
