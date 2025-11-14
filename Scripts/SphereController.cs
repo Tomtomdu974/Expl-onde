@@ -23,6 +23,7 @@ public class SphereController : MonoBehaviour
             else
             {
                 activeGround.DesactiveGrounds(lane);
+                // gameManager.GameOver();
             }
         }
     }

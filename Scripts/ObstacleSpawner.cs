@@ -5,11 +5,6 @@ public class ObstacleSpawner : MonoBehaviour
 {
     [SerializeField] GameObject prefabToSpawn;
 
-    private void Start()
-    {
-        StartCoroutine(spawnRoutine());
-    }
-
     IEnumerator spawnRoutine()
     {
         float spawnInterval = Random.Range(1f, 4f);
@@ -18,14 +13,14 @@ public class ObstacleSpawner : MonoBehaviour
         go.GetComponent<Obstacle>();
         StartCoroutine(spawnRoutine());
     }
-}
 
-        // obstacle1 = Instantiate(prefabToSpawn, obstacleSpawner1.transform.position, Quaternion.identity);
-        // obstacle2 = Instantiate(prefabToSpawn, obstacleSpawner2.transform.position, Quaternion.identity);
-        // obstacle3 = Instantiate(prefabToSpawn, obstacleSpawner3.transform.position, Quaternion.identity);
-        // obstacle1.transform.SetParent(obstacleSpawner1.transform);
-        // obstacle2.transform.SetParent(obstacleSpawner2.transform);
-        // obstacle3.transform.SetParent(obstacleSpawner3.transform);
-        // obstacle1.GetComponent<Obstacle>();
-        // obstacle2.GetComponent<Obstacle>();
-        // obstacle3.GetComponent<Obstacle>();
+    private void OnEnable()
+    {
+        StartCoroutine(spawnRoutine());
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+}

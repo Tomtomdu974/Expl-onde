@@ -1,11 +1,9 @@
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
 
 public class ScoreUI : MonoBehaviour
 {
     [SerializeField] private IntEventChannelSO updateScoreChannel;
-
     private TextMeshProUGUI scoreText;
 
     private void Awake()
@@ -25,6 +23,6 @@ public class ScoreUI : MonoBehaviour
 
     private void UpdateScore(int score)
     {
-        scoreText.text = score.ToString();
+        scoreText.text = "Score : " + score.ToString();
     }
 }

@@ -7,13 +7,13 @@ public class CollectableObstacle : MonoBehaviour
 
     private bool isCollected = false;
 
-public void OnCollected()
-{
-    if (isCollected) return; 
-    isCollected = true;
-    
-    collectObstacleChannel.RaiseEvent(score);
-    Destroy(gameObject);
-}
+    public void OnCollected()
+    {
+        if (isCollected) return; 
+        isCollected = true;
+        
+        collectObstacleChannel.RaiseEvent(score);
+        Destroy(gameObject);
+    }
 
 }
