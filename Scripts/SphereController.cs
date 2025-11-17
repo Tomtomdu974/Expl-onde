@@ -26,5 +26,10 @@ public class SphereController : MonoBehaviour
                 // gameManager.GameOver();
             }
         }
+
+        if (other.gameObject.CompareTag("Transistor"))
+        {
+            other.GetComponent<CollectableTransistor>().OnCollected();
+        }
     }
 }

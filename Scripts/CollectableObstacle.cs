@@ -15,5 +15,4 @@ public class CollectableObstacle : MonoBehaviour
         collectObstacleChannel.RaiseEvent(score);
         Destroy(gameObject);
     }
-
 }

@@ -26,5 +26,10 @@ public class Collectable : MonoBehaviour
         {
             activeGround.DesactiveGrounds(lane);
         }
+
+        if(other.gameObject.CompareTag("Transistor"))
+        {
+            onCollected?.Invoke();
+        }
     }
 }

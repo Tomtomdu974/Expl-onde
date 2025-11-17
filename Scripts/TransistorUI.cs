@@ -20,6 +20,7 @@ public class TransistorUI : MonoBehaviour
     {
         updateTransistorChannel.onEventRaised -= UpdateTransistor;
     }
+
         private void UpdateTransistor(int transistor)
     {
         transistorText.text = "Transistor : " + transistor.ToString();
