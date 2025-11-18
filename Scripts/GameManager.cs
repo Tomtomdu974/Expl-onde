@@ -4,10 +4,12 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private IntEventChannelSO updateScoreChannel;
-    [SerializeField] private IntEventChannelSO updateTransistorChannel;
     [SerializeField] private IntEventChannelSO collectObstacleChannel;
+    [SerializeField] private IntEventChannelSO updateScoreChannel;
+    [SerializeField] private IntEventChannelSO collectTransistorChannel;
+    [SerializeField] private IntEventChannelSO updateTransistorChannel;
     public Material[] materialsWave;
+    private ActiveGround activeGrounds;
 
     private int score = 0;
     private int transistor = 0;
@@ -21,13 +23,13 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         collectObstacleChannel.onEventRaised += AddScore;
-        collectObstacleChannel.onEventRaised += AddTransistor;
+        collectTransistorChannel.onEventRaised += AddTransistor;
     }
 
     private void OnDisable()
     {
         collectObstacleChannel.onEventRaised -= AddScore;
-        collectObstacleChannel.onEventRaised -= AddTransistor;
+        collectTransistorChannel.onEventRaised -= AddTransistor;
     }
 
     public void AddScore(int score)
@@ -43,11 +45,11 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void GameOver()
+    public void GameOverScene()
     {
-        ScoreManager.lastScore = score;
-        
+        RecupScore.lastScore = score;
+        RecupTransistor.lastTransistor = transistor;
         SceneManager.LoadScene("GameOver");
-
+        activeGrounds.GameOver();
     }
 }

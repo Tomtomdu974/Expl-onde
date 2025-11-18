@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CollectableTransistor : MonoBehaviour
 {
-    [SerializeField] private IntEventChannelSO updateTransistorChannel;
+    [SerializeField] private IntEventChannelSO collectTransistorChannel;
     [SerializeField] private int transistor = 1;
 
     private bool isCollected = false;
@@ -12,7 +12,8 @@ public class CollectableTransistor : MonoBehaviour
         if (isCollected) return; 
         isCollected = true;
         
-        updateTransistorChannel.RaiseEvent(transistor);
+        collectTransistorChannel.RaiseEvent(transistor);
         Destroy(gameObject);
+        Debug.Log("Transistor Collected");
     }
 }

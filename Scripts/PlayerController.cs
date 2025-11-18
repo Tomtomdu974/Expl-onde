@@ -7,7 +7,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject Wave1;
     [SerializeField] private GameObject Wave2;
     [SerializeField] private GameObject Wave3;
-    private int actualColorIndex = 0;
+    private int actualColorIndex1 = 0;
+    private int actualColorIndex2 = 0;
+    private int actualColorIndex3 = 0;
     private GameManager gameManager;
     private GameObject sphere1;
     private GameObject sphere2;
@@ -35,44 +37,44 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Keypad2))
         {
-            actualColorIndex += 1;
-            if (actualColorIndex >= gameManager.materialsWave.Length)
+            actualColorIndex1 += 1;
+            if (actualColorIndex1 >= gameManager.materialsWave.Length)
             {
 
-                actualColorIndex = 0;
+                actualColorIndex1 = 0;
             }
 
             if(sphere1 != null)
             {
-                sphere1.GetComponent<Renderer>().material = gameManager.materialsWave[actualColorIndex];
+                sphere1.GetComponent<Renderer>().material = gameManager.materialsWave[actualColorIndex1];
             }
         }
 
         if (Input.GetKeyDown(KeyCode.E)|| Input.GetKeyDown(KeyCode.Keypad3))
         {
-            actualColorIndex += 1;
-            if (actualColorIndex >= gameManager.materialsWave.Length)
+            actualColorIndex2 += 1;
+            if (actualColorIndex2 >= gameManager.materialsWave.Length)
             {
-                actualColorIndex = 0;
+                actualColorIndex2 = 0;
             }
 
             if(sphere2 != null)
             {
-                sphere2.GetComponent<Renderer>().material = gameManager.materialsWave[actualColorIndex];
+                sphere2.GetComponent<Renderer>().material = gameManager.materialsWave[actualColorIndex2];
             }
         }
         
         if (Input.GetKeyDown(KeyCode.Q)|| Input.GetKeyDown(KeyCode.Keypad1))
         {
-            actualColorIndex += 1;
-            if (actualColorIndex >= gameManager.materialsWave.Length)
+            actualColorIndex3 += 1;
+            if (actualColorIndex3 >= gameManager.materialsWave.Length)
             {
-                actualColorIndex = 0;
+                actualColorIndex3 = 0;
             }
 
             if(sphere3 != null)
             {
-                sphere3.GetComponent<Renderer>().material = gameManager.materialsWave[actualColorIndex];
+                sphere3.GetComponent<Renderer>().material = gameManager.materialsWave[actualColorIndex3];
             }
         }
     }
