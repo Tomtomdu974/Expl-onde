@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ActiveGround : MonoBehaviour
 {
@@ -105,9 +106,7 @@ public class ActiveGround : MonoBehaviour
     
     public void GameOver()
     {
-        if (wave.Length == 0)
-        {
-            gameManager.GameOverScene();
-        }
+        gameManager.GameOverScene();
+        
     }
 }

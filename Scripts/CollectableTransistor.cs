@@ -14,6 +14,5 @@ public class CollectableTransistor : MonoBehaviour
         
         collectTransistorChannel.RaiseEvent(transistor);
         Destroy(gameObject);
-        Debug.Log("Transistor Collected");
     }
 }

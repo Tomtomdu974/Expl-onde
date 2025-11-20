@@ -50,6 +50,5 @@ public class GameManager : MonoBehaviour
         RecupScore.lastScore = score;
         RecupTransistor.lastTransistor = transistor;
         SceneManager.LoadScene("GameOver");
-        activeGrounds.GameOver();
     }
 }

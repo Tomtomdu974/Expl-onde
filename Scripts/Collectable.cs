@@ -7,11 +7,12 @@ public class Collectable : MonoBehaviour
     [SerializeField] private UnityEvent onCollected;
     [SerializeField] private string collectableTag = "Collectable";
     private Color obstacleColor;
-    private ActiveGround activeGrounds;
+    private ActiveGround activeGround;
     public int lane;
 
     void Start()
     {
+        activeGround = GameObject.Find("ActiveGrounds").GetComponent<ActiveGround>();
         GetComponent<Collider>().isTrigger = true;
         obstacleColor = GetComponent<Renderer>().material.color;
     }
@@ -24,10 +25,11 @@ public class Collectable : MonoBehaviour
         }
         else
         {
-            activeGrounds.DesactiveGrounds(lane);
+            // activeGround.DesactiveGrounds(lane);
+            Debug.Log("Problème ");
         }
 
-        if(other.gameObject.CompareTag("Transistor"))
+        if (other.gameObject.CompareTag("Transistor"))
         {
             onCollected?.Invoke();
         }
