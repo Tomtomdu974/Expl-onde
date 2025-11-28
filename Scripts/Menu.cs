@@ -15,7 +15,7 @@ public class Menu : MonoBehaviour
         newGameButtonText.text = "Nouvelle Partie";
         scoreButtonText.text = "Scores";
         controleButtonText.text = "Contrôles";
-        exitGameButtonText.text = "Quitter";
+        exitGameButtonText.text = "Quitter le jeu";
     }
 
     public void newGame()

@@ -22,7 +22,10 @@ public class SphereController : MonoBehaviour
             }
             else
             {
+                Debug.Log($"Sphère lane {lane} touchée par mauvaise couleur!");
                 activeGround.DesactiveGrounds(lane);
+                gameObject.SetActive(false);
+                Debug.Log($"Sphère lane {lane} désactivée");
             }
         }
 

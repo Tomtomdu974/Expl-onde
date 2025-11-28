@@ -4,11 +4,13 @@ using UnityEngine.SceneManagement;
 
 public class GameOverMenu : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI gameOverButtonText;
+    [SerializeField] TextMeshProUGUI restartButtonText;
+    [SerializeField] TextMeshProUGUI quitButtonText;
 
     private void Start()
     {
-        gameOverButtonText.text = "Restart";
+        restartButtonText.text = "Rejouer";
+        quitButtonText.text = "Quitter le jeu";
     }
 
     public void RestartGame()

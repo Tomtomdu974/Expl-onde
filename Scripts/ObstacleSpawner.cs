@@ -10,7 +10,7 @@ public class ObstacleSpawner : MonoBehaviour
         float spawnInterval = Random.Range(1f, 4f);
         yield return new WaitForSeconds(spawnInterval);
         GameObject go = Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
-        go.GetComponent<Obstacle>();
+        // go.GetComponent<Obstacle>();
         StartCoroutine(spawnRoutine());
     }
 

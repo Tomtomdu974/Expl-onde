@@ -11,9 +11,9 @@ public class PlayerController : MonoBehaviour
     private int actualColorIndex2 = 0;
     private int actualColorIndex3 = 0;
     private GameManager gameManager;
-    private GameObject sphere1;
-    private GameObject sphere2;
-    private GameObject sphere3; 
+    public GameObject sphere1;
+    public GameObject sphere2;
+    public GameObject sphere3; 
 
     private void Start()
     {
@@ -31,10 +31,24 @@ public class PlayerController : MonoBehaviour
         sphere1.GetComponent<Renderer>().material = gameManager.materialsWave[0];
         sphere2.GetComponent<Renderer>().material = gameManager.materialsWave[0];
         sphere3.GetComponent<Renderer>().material = gameManager.materialsWave[0];
+
+        if (!Wave2.activeSelf) sphere2.SetActive(false);
+        if (!Wave3.activeSelf) sphere3.SetActive(false);
     }
 
     private void Update()
     {
+        int activeSpheres = 0;
+        if (sphere1 != null && sphere1.activeSelf) activeSpheres++;
+        if (sphere2 != null && sphere2.activeSelf) activeSpheres++;
+        if (sphere3 != null && sphere3.activeSelf) activeSpheres++;
+
+        if (activeSpheres == 0)
+        {
+            gameManager.GameOverScene();
+            enabled = false;
+        }
+
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Keypad2))
         {
             actualColorIndex1 += 1;
@@ -77,5 +91,10 @@ public class PlayerController : MonoBehaviour
                 sphere3.GetComponent<Renderer>().material = gameManager.materialsWave[actualColorIndex3];
             }
         }
+
+        // if (sphere1 != null) Debug.Log($"Sphere1 active: {sphere1.activeSelf}");
+
+    
+        
     }
 }
